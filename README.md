@@ -1,36 +1,90 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
 
-## Getting Started
+# Vibe Commerce - Full Stack Cart Assignment
 
-First, run the development server:
+**Submitted by:** Chaitanya Lohani
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+---
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## Project Overview
 
-You can start editing the page by modifying `app/page.js`. The page auto-updates as you edit the file.
+Vibe Commerce is a full-stack e-commerce cart application built as part of a company screening assignment. The project demonstrates a complete shopping cart experience using the latest Next.js App Router, React Context API for state management, and a MongoDB backend. It fulfills all assignment requirements, including product display, cart management, and a mock checkout process.
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+---
 
-## Learn More
+## Tech Stack Used
 
-To learn more about Next.js, take a look at the following resources:
+- **Framework:** Next.js (App Router)
+- **Frontend:** React, Tailwind CSS, Axios, React Context API
+- **Backend:** Next.js API Routes (Node.js)
+- **Database:** MongoDB (using Mongoose)
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+---
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+## Features Implemented
 
-## Deploy on Vercel
+### Backend API Endpoints
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+- `GET /api/products`: Serves a list of mock products.
+- `GET /api/cart`: Fetches all items from the MongoDB cart.
+- `POST /api/cart`: Adds an item to the cart (handles quantity updates for existing items).
+- `DELETE /api/cart/[id]`: Deletes a specific item from the cart.
+- `POST /api/checkout`: Calculates the total, returns a mock receipt, and clears the cart in the database.
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+### Frontend Features
+
+- Products page that fetches and displays all products.
+- "Add to Cart" functionality that updates a global cart state.
+- Navbar component that shows the real-time cart item count using React Context.
+- Dedicated `/cart` page that lists all cart items, shows the total, and allows users to delete items.
+- `/checkout` page with a form, order summary, and a mock receipt page upon successful submission.
+
+---
+
+## How to Run the Project Locally
+
+1. **Clone the repository:**
+	```sh
+	git clone <repository-url>
+	cd nexora-assignment
+	```
+2. **Create a `.env.local` file in the root and add your MongoDB connection string:**
+	```env
+	MONGODB_URI=your_mongodb_connection_string
+	```
+3. **Install dependencies:**
+	```sh
+	npm install
+	```
+4. **Run the development server:**
+	```sh
+	npm run dev
+	```
+	The app will be available at [http://localhost:3000](http://localhost:3000) (or another port if 3000 is in use).
+
+---
+
+## Screenshots
+
+**Products Page**
+![Products Page](./screenshorts/Products_page.png)
+
+**Cart Page**
+![Cart Page](./screenshorts/cart_page.png)
+
+**Checkout Page**
+![Checkout Page](./screenshorts/checkout_page.png) 
+
+**Recipt Page**
+![Recipt Page](./screenshorts/recipt_page.png) 
+
+---
+
+## Demo Video
+
+## Demo Video
+
+[Click here to watch the 5-minute project demo](https://youtu.be/oaU1lFMdXy0?si=ERv7LLn_zMcmMY77)
+
+---
+
+Thank you for reviewing my submission!
